@@ -1,5 +1,4 @@
 from guizero import App, PushButton
-from PIL import Image
 import RPi.GPIO as GPIO
 
 GPIO.setwarnings(False)
@@ -16,64 +15,64 @@ def DPS_callback():
     DPS_state = 1
     DPS_button.image = path + 'DPS_on.png'
     GPIO.setup(29, GPIO.OUT)
-    GPIO.output(29, GPIO.HIGH)
+    GPIO.output(29, GPIO.LOW)
     USHMM_button.image = path + 'USHMM_off.png'
     GPIO.setup(31, GPIO.OUT)
-    GPIO.output(31, GPIO.LOW)
+    GPIO.output(31, GPIO.HIGH)
     XRay_button.image = path + 'XRay_off.png'
     GPIO.setup(33, GPIO.OUT)
-    GPIO.output(33, GPIO.LOW)
+    GPIO.output(33, GPIO.HIGH)
     CrossMatch_button.image = path + 'CrossMatch_off.png'
     GPIO.setup(37, GPIO.OUT)
-    GPIO.output(37, GPIO.LOW)
+    GPIO.output(37, GPIO.HIGH)
 
 def USHMM_callback():
     global USHMM_state, USHMM_button
     USHMM_state = 1
     USHMM_button.image = path + 'USHMM_on.png'
     GPIO.setup(31, GPIO.OUT)
-    GPIO.output(31, GPIO.HIGH)
+    GPIO.output(31, GPIO.LOW)
     DPS_button.image = path + 'DPS_off.png'
     GPIO.setup(29, GPIO.OUT)
-    GPIO.output(29, GPIO.LOW)
+    GPIO.output(29, GPIO.HIGH)
     XRay_button.image = path + 'XRay_off.png'
     GPIO.setup(33, GPIO.OUT)
-    GPIO.output(33, GPIO.LOW)
+    GPIO.output(33, GPIO.HIGH)
     CrossMatch_button.image = path + 'CrossMatch_off.png'
     GPIO.setup(37, GPIO.OUT)
-    GPIO.output(37, GPIO.LOW)
+    GPIO.output(37, GPIO.HIGH)
 
 def XRAY_callback():
     global XRAY_state, XRay_button
     XRAY_state = 1
     XRay_button.image = path + 'XRay_on.png'
     GPIO.setup(33, GPIO.OUT)
-    GPIO.output(33, GPIO.HIGH)
+    GPIO.output(33, GPIO.LOW)
     DPS_button.image = path + 'DPS_off.png'
     GPIO.setup(29, GPIO.OUT)
-    GPIO.output(29, GPIO.LOW)
+    GPIO.output(29, GPIO.HIGH)
     USHMM_button.image = path + 'USHMM_off.png'
     GPIO.setup(31, GPIO.OUT)
-    GPIO.output(31, GPIO.LOW)
+    GPIO.output(31, GPIO.HIGH)
     CrossMatch_button.image = path + 'CrossMatch_off.png'
     GPIO.setup(37, GPIO.OUT)
-    GPIO.output(37, GPIO.LOW)
+    GPIO.output(37, GPIO.HIGH)
 
 def CROSSMATCH_callback():
     global CROSSMATCH_state, CrossMatch_button
     CROSSMATCH_state = 1
     CrossMatch_button.image = path + 'CrossMatch_on.png'
     GPIO.setup(37, GPIO.OUT)
-    GPIO.output(37, GPIO.HIGH)
+    GPIO.output(37, GPIO.LOW)
     DPS_button.image = path + 'DPS_off.png'
     GPIO.setup(29, GPIO.OUT)
-    GPIO.output(29, GPIO.LOW)
+    GPIO.output(29, GPIO.HIGH)
     USHMM_button.image = path + 'USHMM_off.png'
     GPIO.setup(31, GPIO.OUT)
-    GPIO.output(31, GPIO.LOW)
+    GPIO.output(31, GPIO.HIGH)
     XRay_button.image = path + 'XRay_off.png'
     GPIO.setup(33, GPIO.OUT)
-    GPIO.output(33, GPIO.LOW)
+    GPIO.output(33, GPIO.HIGH)
 
 app = App(title="KVM", width=800, height=480, layout="grid")
 app.bg='black'
